@@ -2,6 +2,8 @@ import { MainLayout } from 'components/Layout';
 import React from 'react';
 import { BrowserRouter, Redirect, Switch } from 'react-router-dom';
 import './styles/style.scss';
+import {  NumberWidget } from 'components/Widget';
+
 import {
   // Badge,
   // Button,
@@ -41,7 +43,7 @@ const getBasename = () => {
 
 class App extends React.Component {
   componentDidMount() {
-    // this is needed, because of window scroll
+    // this is needed, because InfiniteCalendar forces window scroll
     window.scrollTo(0, 0);
   }
 
@@ -79,9 +81,7 @@ class App extends React.Component {
 
                     </div>
                     <div className="mainchlidright">
-                    <button type="button" className="btn btn-default">
-                      <div className="clander"></div>
-                      <b>Last 7 days,</b> Sep 22,2019 - Sep 28,2019</button>
+                    <button type="button" className="btn btn-default">Calender</button>
                     </div>
                 </div>
 
@@ -114,10 +114,10 @@ class App extends React.Component {
                
                 </div>
             
-                <div className="dataDiv2">
+                <div className="dataDiv">
                 <Row>
           <Col lg={3} md={6} sm={6} xs={12}>
-          <form onSubmit={this.handleFormSubmit} className="from_radio">
+          <form onSubmit={this.handleFormSubmit}>
               <div className="form-check">
                 <label>
                   <input
@@ -128,7 +128,7 @@ class App extends React.Component {
                     onChange={this.handleOptionChange}
                     className="form-check-input"
                   />
-                 Last 7 days 
+                  Option 1
                 </label>
               </div>
               <div className="form-check">
@@ -141,10 +141,10 @@ class App extends React.Component {
                     onChange={this.handleOptionChange}
                     className="form-check-input"
                   />
-                 Privious 7 days 
+                  Option 2
                 </label>
               </div>
-              {/* <div className="form-check">
+              <div className="form-check">
                 <label>
                   <input
                     type="radio"
@@ -156,42 +156,53 @@ class App extends React.Component {
                   />
                   Option 3
                 </label>
-              </div> */}
-              {/* <div className="form-group">
+              </div>
+              <div className="form-group">
                 <button className="btn btn-primary mt-2" type="submit">
                   Save
                 </button>
-              </div> */}
+              </div>
             </form>
       
           </Col>
 
           <Col lg={3} md={6} sm={6} xs={12}>
-            <div className="quesiton"></div>
-            <p className="text"> ESTIMATED EU REVENUE</p>
-            <div className="downarrow"></div> 
-            <span className="number">
-            -1%
-            </span>
-
+            <NumberWidget
+              title="Monthly Visitors"
+              subtitle="This month"
+              number="5,400"
+              color="secondary"
+              progress={{
+                value: 45,
+                label: 'Last month',
+              }}
+            />
           </Col>
 
           <Col lg={3} md={6} sm={6} xs={12}>
-          <div className="quesiton"></div>
-            <p className="text"> ESTIMATED EU REVENUE</p>
-            <div className="downarrow"></div> 
-            <span className="number">
-            -1%
-            </span>
+            <NumberWidget
+              title="New Users"
+              subtitle="This month"
+              number="3,400"
+              color="secondary"
+              progress={{
+                value: 90,
+                label: 'Last month',
+              }}
+            />
           </Col>
 
           <Col lg={3} md={6} sm={6} xs={12}>
-          <div className="quesiton"></div>
-            <p className="text"> ESTIMATED EU REVENUE</p>
-            <div className="downarrow"></div> 
-            <span className="number">
-            -1%
-            </span>
+            <NumberWidget
+              title="Bounce Rate"
+              subtitle="This month"
+              number="38%"
+              color="secondary"
+              progress={{
+                value: 60,
+                label: 'Last month',
+              }}
+            />
           </Col>
         </Row>
 
