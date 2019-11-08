@@ -1,0 +1,107 @@
+@import "variables";
+
+// libraries
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~react-infinite-calendar/styles";
+
+// base
+@import "base";
+@import "overrides";
+@import "extends";
+@import "animations";
+@import "utils/utils";
+
+// components
+@import "components/header";
+@import "components/sidebar";
+@import "components/content";
+@import "components/page";
+@import "components/widget";
+@import "components/search-input";
+
+// themes
+@import "themes/colors";
+
+// demos (only for demo pages)
+@import "demos/demos";
+
+
+.mainDiv{
+    width: 94%;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    height: auto;
+    margin-top: 2%;
+    margin-left: 2%;
+}
+.mainchlidleft{
+    float: left;
+    width: 50%;
+    text-align: left;
+
+}
+.mainchlidright{
+    float: right;
+    width: 50%;
+    text-align: right;
+}
+.mainDivgraph{
+    width: 94%;
+    border-bottom: 1px solid black;
+    height: 200px;
+    margin-top: 2%;
+    margin-left: 2%;
+    border: 1px solid red;
+}
+.dataDiv{
+    width: 94%;
+    height: auto;
+    margin-top: 2%;
+    margin-left: 2%;
+}
+.dataDiv2{
+    width: 94%;
+    height: auto;
+    margin-top: 2%;
+    margin-left: 2%;
+    background: white;
+}
+.data{
+    float: right;
+    width: 50%;
+    text-align: right;
+}
+.from_radio{
+    padding: 10px;
+}
+.clander{
+    background-image: url(../assets/img/icons8-calendar-24.png);
+    height: 20px;
+    width: 20px;
+    float: left;
+    margin-right: 10px;
+}
+.quesiton{
+    background-image: url(../assets/img/icons8-help-30.png);
+    height: 30px;
+    width: 30px;
+    float: left;
+}
+.text{
+    margin-top: 10px;
+}
+.downarrow{
+    background-image: url(../assets/img/icons8-down-right-24.png);
+    height: 20px;
+    width: 20px;
+    float: right;
+    margin-top: -38px;
+    margin-right: 23px;
+}
+
+.number{
+    font-size: 12px;
+    float: right;
+    color: red;
+    margin-top: -30px;
+
+}
